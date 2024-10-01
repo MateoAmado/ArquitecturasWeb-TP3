@@ -9,6 +9,10 @@ import java.util.List;
 
 @Repository
 public interface CarreraRepository extends JpaRepository<Carrera, Long> {
+
+    @Query("SELECT c FROM Carrera c")
+    List<Carrera> obtenerTodasLasCarreras();
+
     @Query("SELECT c FROM Carrera c WHERE c.nombre = :nombre")
     List<Carrera> findCarrerasPorNombre(String nombre);
 }

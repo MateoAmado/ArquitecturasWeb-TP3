@@ -1,5 +1,6 @@
 package org.integrador3.ps.repository;
 
+import org.integrador3.ps.model.Carrera;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -10,6 +11,8 @@ import java.util.List;
 @Repository
 public interface EstudianteRepository extends JpaRepository<Estudiante, Long> {
 
+    @Query("SELECT e FROM Estudiante e")
+    List<Estudiante> obtenerTodasLosEstudiantes();
 
     List<Estudiante> findByNombreContaining(String nombre);
 }

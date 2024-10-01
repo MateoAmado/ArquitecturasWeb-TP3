@@ -1,5 +1,7 @@
 package org.integrador3.ps.controller;
 
+import org.integrador3.ps.model.Carrera;
+import org.integrador3.ps.services.EstudianteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,28 +12,30 @@ import org.integrador3.ps.repository.EstudianteRepository;
 import responses.ErrorResponse;
 import responses.EstudianteResponse;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/estudiantes")
 public class EstudianteController {
 
     @Autowired
-    private EstudianteRepository estudianteRepository;
+    private final EstudianteService estudianteService;
 
+    public EstudianteController(EstudianteService estudianteService) {
+        this.estudianteService = estudianteService;
+    }
 
     @GetMapping("/")
-    public ResponseEntity<Object> obtenerTodosLosEstudiantes() {
-        try {
-            EstudianteResponse jr = new EstudianteResponse();
-            return ResponseEntity.ok(jr);
-        } catch (Exception e) {
-            ErrorResponse er = new ErrorResponse(HttpStatus.BAD_REQUEST, e.getMessage());
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(er);
-        }
+    public ResponseEntity<List<Estudiante>> obtenerTodosLosEstudiantes() {
+        List<Estudiante> estudiantes = estudianteService.obtenerTodasLosEstudiantes();
+        return new ResponseEntity<>(estudiantes, HttpStatus.OK);
+
     }
 
     @PostMapping
-    public Estudiante crearEstudiante(@RequestBody Estudiante estudiante) {
-        return estudianteRepository.save(estudiante);
+    public ResponseEntity<Estudiante> crearEstudiante(@RequestBody Estudiante estudiante) {
+        Estudiante e = estudianteService.guardarEstudiante(estudiante);
+        return new ResponseEntity<Estudiante>(e, HttpStatus.CREATED);
     }
 
   /*  @GetMapping("/nroLibreta/{nroLibreta}")
