@@ -1,6 +1,8 @@
-package ps.controller;
+package org.integrador3.ps.controller;
 
 
+import org.integrador3.ps.model.Carrera;
+import org.integrador3.ps.services.ApiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -11,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import ps.model.*;
-import ps.services.*;
+import org.integrador3.ps.model.*;
+import org.integrador3.ps.services.*;
 
 @RestController
 @RequestMapping("/rest_template")

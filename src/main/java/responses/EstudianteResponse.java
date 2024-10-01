@@ -1,8 +1,8 @@
-package rs.responses;
+package responses;
 
 
 import lombok.NoArgsConstructor;
-import ps.model.Estudiante;
+import org.integrador3.ps.model.Estudiante;
 
 import java.util.List;
 

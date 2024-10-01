@@ -1,23 +1,19 @@
-package ps.model;
+package org.integrador3.ps.model;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+
 import java.util.HashSet;
 import java.util.Set;
 
-@Getter
-@Setter
-@NoArgsConstructor
+
 @Entity
 @Table(name = "estudiante")
 public class Estudiante {
 
     @Id
     @Column(name = "numero_documento", unique = true)
-    private int numeroDocumento;
+    private Long numeroDocumento;
 
     @Column(name = "nombre", length = 100)
     private String nombre;
@@ -45,7 +41,7 @@ public class Estudiante {
     )
     private Set<Carrera> carreras = new HashSet<>();
 
-    public Estudiante(int numeroDocumento, String nombre, String apellido, int edad, String genero, String ciudadResidencia, int numeroLibretaUniversitaria) {
+    public Estudiante(Long numeroDocumento, String nombre, String apellido, int edad, String genero, String ciudadResidencia, int numeroLibretaUniversitaria) {
         this.numeroDocumento = numeroDocumento;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -53,6 +49,10 @@ public class Estudiante {
         this.genero = genero;
         this.ciudadResidencia = ciudadResidencia;
         this.numeroLibretaUniversitaria = numeroLibretaUniversitaria;
+    }
+
+    public Estudiante(){
+
     }
 
     public void setCarrera(Carrera carrera) {

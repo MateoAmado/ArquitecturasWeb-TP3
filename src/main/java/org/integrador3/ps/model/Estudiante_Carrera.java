@@ -1,6 +1,6 @@
-package ps.model;
+package org.integrador3.ps.model;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.time.LocalDate;
 
 

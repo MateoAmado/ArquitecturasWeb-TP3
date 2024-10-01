@@ -1,19 +1,20 @@
-package ps.services;
+package org.integrador3.ps.services;
 
+import org.integrador3.ps.model.Carrera;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import ps.model.*;
+import org.integrador3.ps.model.*;
 
 
 @Service
 public class ApiService {
     // Reemplaza con la URL de tu API
 
-    @Value("${base_url}")
+    @Value("http://localhost:8090")
     private String base_url;
 
     @Autowired

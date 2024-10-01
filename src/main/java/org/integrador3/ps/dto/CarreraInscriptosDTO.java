@@ -1,4 +1,4 @@
-package ps.dto;
+package org.integrador3.ps.dto;
 
 public class CarreraInscriptosDTO {
 
