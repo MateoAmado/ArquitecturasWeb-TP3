@@ -16,21 +16,9 @@ import responses.EstudianteCarreraResponse;
 @RequestMapping("/estudiante_carrera")
 public class EstudianteCarreraController {
 
-@Autowired
+ @Autowired
  private EstudianteCarreraRepository estudianteCarreraRepository;
 
- @Value("${variable_env}")
- private String variable_env;
-
- @GetMapping("/variable_env")
- public String obtener_variable_env() {
-  return variable_env;
- }
-
- @GetMapping("/string")
- public String obtener_string_hardcodeado() {
-  return "Un mensaje de texto.";
- }
 
  // Obtener todos los jugadores
  @GetMapping

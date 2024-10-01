@@ -2,6 +2,7 @@ package org.integrador3.ps.model;
 
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -9,6 +10,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "estudiante")
+@Data
 public class Estudiante {
 
     @Id
