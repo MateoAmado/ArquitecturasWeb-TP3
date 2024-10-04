@@ -6,27 +6,19 @@ import java.io.Serializable;
 @Embeddable
 public class EstudianteCarreraId implements Serializable {
 
-
     @Column(name = "estudiante_numero_documento")
     private Long estudianteNumeroDocumento;
 
     @Column(name = "id_carrera")
-    private int IdCarrera;
+    private Long IdCarrera;
 
-   /* public void setEstudianteId(Estudiante p1) {
-        this.estudianteNumeroDocumento=p1.getNumeroDocumento();
+    public EstudianteCarreraId(Long estudianteNumeroDocumento, Long idCarrera){
+        this.estudianteNumeroDocumento = estudianteNumeroDocumento;
+        IdCarrera = idCarrera;
     }
 
-    public void setCarreraId(Carrera carrera) {
-        this.IdCarrera=carrera.getIdCarrera();
-    }
-*/
-    public int getCarreraId(){
-        return IdCarrera;
-    }
+    public EstudianteCarreraId() {
 
-    public Long getEstudianteNumeroDocumento(){
-        return estudianteNumeroDocumento;
     }
 
 }

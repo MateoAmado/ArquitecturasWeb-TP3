@@ -33,4 +33,23 @@ public class EstudianteService {
         List<Estudiante> estudiantes=estudianteRepository.getEstudianteByGenero(genero);
         return estudiantes;
     }
+
+    public List<Estudiante> getEstudiantesOrdenadorPorApellido() {
+        List<Estudiante> estudiantes=estudianteRepository.getEstudianteOrdenadosPorApellido();
+        return estudiantes;
+    }
+
+    public void actualizarEstudiante(Long nroDocumento, Estudiante estudiante){
+        estudiante.setNumeroDocumento(nroDocumento);
+
+
+    }
+
+    public List<Estudiante> obtenerEstudiantesPorCarreraYCiudad(String carrera, String ciudad){
+        return estudianteRepository.obtenerEstudiantesPorCarreraYCiudad(carrera, ciudad);
+    }
+
+    public void eliminarEstudiante(Long nroDocumento) {
+        estudianteRepository.deleteById(nroDocumento);
+    }
 }

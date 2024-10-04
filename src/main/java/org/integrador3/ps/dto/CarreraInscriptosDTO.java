@@ -2,20 +2,20 @@ package org.integrador3.ps.dto;
 
 public class CarreraInscriptosDTO {
 
-    private int idCarrera;
+    private Long idCarrera;
 
     private String nombre;
 
     private long cantInscriptos;
 
 
-    public CarreraInscriptosDTO(int idCarrera, String nombre, long cantInscriptos) {
+    public CarreraInscriptosDTO(Long idCarrera, String nombre, long cantInscriptos) {
         this.idCarrera = idCarrera;
         this.nombre = nombre;
         this.cantInscriptos = cantInscriptos;
     }
 
-    public int getIdCarrera() {
+    public Long getIdCarrera() {
         return idCarrera;
     }
     public String getNombre() {
