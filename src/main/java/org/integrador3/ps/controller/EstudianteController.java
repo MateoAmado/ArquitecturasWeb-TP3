@@ -38,16 +38,21 @@ public class EstudianteController {
         return new ResponseEntity<Estudiante>(e, HttpStatus.CREATED);
     }
 
-  /*  @GetMapping("/nroLibreta/{nroLibreta}")
-    public List<Estudiante> obtenerJugadoresNroLibreta(@PathVariable int nroLibreta) {
+   @GetMapping("/nroLibreta/{nroLibreta}")
+    public ResponseEntity<Estudiante> obtenerJugadoresNroLibreta(@PathVariable int nroLibreta) {
         int idLibreta = Integer.valueOf(nroLibreta);
-        return estudianteRepository.getEstudiantePorNroLibreta(idLibreta);
+        Estudiante e=estudianteService.getEstudiantePorNroLibreta(idLibreta);
+        if(e!=null){
+            return new ResponseEntity<>(e, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(e, HttpStatus.BAD_REQUEST);
     }
-*/
-  /*  @GetMapping("/genero/{genero}")
-    public List<Estudiante> obtenerJugadoresNroLibreta(@PathVariable String genero) {
-        return estudianteRepository.getEstudiantesPorGenero(genero);
+
+    @GetMapping("/genero/{genero}")
+    public ResponseEntity<List<Estudiante>> obtenerJugadoresNroLibreta(@PathVariable String genero) {
+        List<Estudiante> estudiantes=estudianteService.getEstudiantesPorGenero(genero);
+        return new ResponseEntity<>(estudiantes, HttpStatus.OK);
     }
-*/
+
 
 }

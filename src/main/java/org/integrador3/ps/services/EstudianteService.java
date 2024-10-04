@@ -24,4 +24,13 @@ public class EstudianteService {
     }
 
 
+    public Estudiante getEstudiantePorNroLibreta(int idLibreta) {
+        Estudiante e=estudianteRepository.findEstudianteByNumeroLibretaUniversitaria(idLibreta);
+        return e;
+    }
+
+    public List<Estudiante> getEstudiantesPorGenero(String genero) {
+        List<Estudiante> estudiantes=estudianteRepository.getEstudianteByGenero(genero);
+        return estudiantes;
+    }
 }
