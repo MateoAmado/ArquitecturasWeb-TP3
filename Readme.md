@@ -13,15 +13,7 @@
   "edad": 22,
   "genero": "Masculino",
   "ciudadResidencia": "Buenos Aires",
-  "numeroLibretaUniversitaria": 987654,
-  "carreras": [
-  {
-  "idCarrera": 1
-  },
-  {
-  "idCarrera": 2
-  }
-  ]
+  "numeroLibretaUniversitaria": 987654
   }
 
 
@@ -29,6 +21,31 @@
 - Para hacer un insert en Carreras, debemos hacerlo vía postman en la url: http://localhost:8090/carreras, dejo un template de ejemplo:
 
 {
-  "valor": 5000.0,
-  "posicion": "Primera"
+  "nombre" : "TUDAI"
   }
+
+### Estudiante_Carrera
+- Para hacer un insert en Estudiante_Carrero, debemos hacerlo via postman en la url: http://localhost:8090/estudiante_carrera
+
+{
+  "id": {
+    "estudianteNumeroDocumento": 123456789,
+    "idCarrera": 1
+  },
+  "estudiante": {
+    "numeroDocumento": 123456789,
+    "nombre": "Juan",
+    "apellido": "Pérez",
+    "edad": 22,
+    "genero": "Masculino",
+    "ciudadResidencia": "Buenos Aires",
+    "numeroLibretaUniversitaria": 987654
+  },
+  
+  "carrera": {
+    "idCarrera": 1,
+    "nombre": "TUDAI"
+  },
+  "fechaInscripcion": "2024-03-01",
+  "graduado": false
+}
