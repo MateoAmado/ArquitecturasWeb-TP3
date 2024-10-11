@@ -1,6 +1,7 @@
 package org.integrador3.ps.model;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 

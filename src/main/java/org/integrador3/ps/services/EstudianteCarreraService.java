@@ -1,14 +1,28 @@
 package org.integrador3.ps.services;
 
+import org.integrador3.ps.dto.EstudianteCarreraDTO;
+import org.integrador3.ps.model.EstudianteCarreraId;
 import org.integrador3.ps.model.Estudiante_Carrera;
 import org.integrador3.ps.repository.EstudianteCarreraRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class EstudianteCarreraService {
+
+    @Autowired
     private EstudianteCarreraRepository estudianteCarreraRepository;
 
-    public Estudiante_Carrera save(Estudiante_Carrera estudianteCarrera){
-        return this.estudianteCarreraRepository.save(estudianteCarrera);
+    public EstudianteCarreraDTO save(Estudiante_Carrera estudianteCarrera){
+        Estudiante_Carrera ec=this.estudianteCarreraRepository.save(estudianteCarrera);
+        EstudianteCarreraDTO ecDTO=this.estudianteCarreraRepository.getEstudianteCarreraPorId(ec.getId());
+        return ecDTO;
+    }
+
+    public List<EstudianteCarreraDTO> obtenerTodasLasCarrerasConEstudiantes() {
+        List<EstudianteCarreraDTO> ec=estudianteCarreraRepository.getTodasLasCarrerasConEstudiantes();
+        return estudianteCarreraRepository.getTodasLasCarrerasConEstudiantes();
     }
 }

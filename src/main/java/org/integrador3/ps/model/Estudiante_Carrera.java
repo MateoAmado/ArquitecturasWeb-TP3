@@ -86,5 +86,18 @@ public class Estudiante_Carrera {
         this.graduado = graduado;
     }
 
+    @Override
+    public String toString() {
+        return "Estudiante_Carrera{" +
+                "id=" + id +
+                ", estudiante=" + estudiante +
+                ", carrera=" + carrera +
+                ", fechaInscripcion=" + fechaInscripcion +
+                ", graduado=" + graduado +
+                '}';
+    }
 
+    public void setId(EstudianteCarreraId id) {
+        this.id=id;
+    }
 }

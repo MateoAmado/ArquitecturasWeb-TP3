@@ -1,4 +1,5 @@
 package org.integrador3.ps.model;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
@@ -21,7 +22,6 @@ public class Carrera {
 
     @Column(name = "nombre", length = 100)
     private String nombre;
-
 
     @ManyToMany(mappedBy = "carreras", fetch = FetchType.LAZY)
     private Set<Estudiante> estudiantes;
