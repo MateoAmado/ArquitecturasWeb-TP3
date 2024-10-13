@@ -1,6 +1,7 @@
 package org.integrador3.ps.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -42,6 +43,7 @@ public class Estudiante {
             joinColumns = @JoinColumn(name = "estudiante_numero_documento"),
             inverseJoinColumns = @JoinColumn(name = "carrera_id_carrera")
     )
+    @JsonIgnore
     private Set<Carrera> carreras = new HashSet<>();
 
     public Estudiante(Long numeroDocumento, String nombre, String apellido, int edad, String genero, String ciudadResidencia, int numeroLibretaUniversitaria) {

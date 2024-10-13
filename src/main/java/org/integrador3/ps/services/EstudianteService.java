@@ -2,6 +2,7 @@ package org.integrador3.ps.services;
 
 import org.integrador3.ps.model.Estudiante;
 import org.integrador3.ps.repository.EstudianteRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,11 +10,9 @@ import java.util.List;
 @Service
 public class EstudianteService {
 
+    @Autowired
     private EstudianteRepository estudianteRepository;
 
-    public EstudianteService(EstudianteRepository estudianteRepository) {
-        this.estudianteRepository = estudianteRepository;
-    }
 
     public List<Estudiante> obtenerTodasLosEstudiantes() {
         return estudianteRepository.obtenerTodasLosEstudiantes();

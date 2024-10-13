@@ -3,6 +3,7 @@ package org.integrador3.ps.services;
 import org.integrador3.ps.dto.CarreraInscriptosDTO;
 import org.integrador3.ps.model.Carrera;
 import org.integrador3.ps.repository.CarreraRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,11 +11,8 @@ import java.util.List;
 @Service
 public class CarreraService {
 
+    @Autowired
     private CarreraRepository carreraRepository;
-
-    public CarreraService(CarreraRepository carreraRepository) {
-        this.carreraRepository = carreraRepository;
-    }
 
     public List<Carrera> obtenerTodasLasCarreras() {
         return carreraRepository.obtenerTodasLasCarreras();

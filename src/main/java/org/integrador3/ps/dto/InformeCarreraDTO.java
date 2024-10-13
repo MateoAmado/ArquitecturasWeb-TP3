@@ -4,10 +4,10 @@ import java.time.LocalDate;
 
 public class InformeCarreraDTO {
 
-    private int id_carrera;
+    private Long id_carrera;
     private String carrera_nombre;
 
-    private int estudiante_nroDocumento;
+    private Long estudiante_nroDocumento;
     private String nombre_estudiante;
     private String estudiante_genero;
     private int edad;
@@ -21,7 +21,7 @@ public class InformeCarreraDTO {
 
 //c.idCarrera, c.nombre, e.numeroDocumento, e.nombre, e.apellido, e.ciudadResidencia, e.edad, e.genero, e.numeroLibretaUniversitaria
 
-    public InformeCarreraDTO(int id_carrera, String carrera_nombre, int estudiante_nroDocumento, String nombre_estudiante, String estudiante_apellido, String estudiante_ciudad, int edad, String estudiante_genero, int estudiante_libretaUniversitaria, LocalDate fechaInscripcion, boolean graduado) {
+    public InformeCarreraDTO(Long id_carrera, String carrera_nombre, Long estudiante_nroDocumento, String nombre_estudiante, String estudiante_apellido, String estudiante_ciudad, int edad, String estudiante_genero, int estudiante_libretaUniversitaria, LocalDate fechaInscripcion, boolean graduado) {
         this.id_carrera = id_carrera;
         this.carrera_nombre = carrera_nombre;
         this.estudiante_nroDocumento = estudiante_nroDocumento;
@@ -35,7 +35,7 @@ public class InformeCarreraDTO {
         this.graduado = graduado;
     }
 
-    public int getId_carrera() {
+    public Long getId_carrera() {
         return id_carrera;
     }
 
@@ -49,7 +49,7 @@ public class InformeCarreraDTO {
         this.carrera_nombre = carrera_nombre;
     }
 
-    public int getEstudiante_nroDocumento() {
+    public Long getEstudiante_nroDocumento() {
         return estudiante_nroDocumento;
     }
 
@@ -126,5 +126,22 @@ public class InformeCarreraDTO {
             return "SI";
         }
         return "NO";
+    }
+
+   public LocalDate getFecha_inscripcion(){
+        return fecha_inscripcion;
+   }
+
+   public void setFecha_inscripcion(LocalDate f_inscripcion){
+        this.fecha_inscripcion=f_inscripcion;
+    }
+
+    public boolean isGraduado(){
+        return graduado;
+    }
+
+
+    public void setGraduado(boolean graduado){
+        this.graduado=graduado;
     }
 }
