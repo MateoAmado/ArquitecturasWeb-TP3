@@ -2,8 +2,10 @@
 
 ## Consultas
 
+
 ### Estudiantes
-- Para hacer un insert en Estudiantes, debemos hacelo via la siguiente url: http://localhost:8090/estudiantes en Postman, dejo un template de ejemplo
+- Para hacer un insert en Estudiantes en la BD H2, debemos hacelo via la siguiente url: http://localhost:8090/estudiantes en Postman
+- Para conectar con la BD de MySQL se debe usar la siguiente url: http://localhost:8080/estudiantes en Postman, dejo un template de ejemplo
 
 
 {
@@ -18,14 +20,17 @@
 
 
 ### Carreras
-- Para hacer un insert en Carreras, debemos hacerlo vía postman en la url: http://localhost:8090/carreras, dejo un template de ejemplo:
+- Para hacer un insert en Carreras en la BD H2, debemos hacelo via la siguiente url: http://localhost:8090/carreras en Postman
+- Para conectar con la BD de MySQL se debe usar la siguiente url:  http://localhost:8080/carreras en Postman, dejo un template de ejemplo
+
 
 {
   "nombre" : "TUDAI"
   }
 
 ### Estudiante_Carrera
-- Para hacer un insert en Estudiante_Carrero, debemos hacerlo via postman en la url: http://localhost:8090/estudiante_carrera
+- Para hacer un insert en Estudiante_Carrera en la BD H2, debemos hacelo via la siguiente url: http://localhost:8090/estudiante_carrera en Postman
+- Para conectar con la BD de MySQL se debe usar la siguiente url:  http://localhost:8080/estudiante_carrera en Postman, dejo un template de ejemplo
 
 {
     "id": {
