@@ -21,4 +21,27 @@ public class EstudianteCarreraId implements Serializable {
 
     }
 
+    public Long getEstudianteNumeroDocumento() {
+        return estudianteNumeroDocumento;
+    }
+
+    public void setEstudianteNumeroDocumento(Long estudianteNumeroDocumento) {
+        this.estudianteNumeroDocumento = estudianteNumeroDocumento;
+    }
+
+    public Long getIdCarrera() {
+        return IdCarrera;
+    }
+
+    public void setIdCarrera(Long idCarrera) {
+        IdCarrera = idCarrera;
+    }
+
+    @Override
+    public String toString() {
+        return "EstudianteCarreraId{" +
+                "estudianteNumeroDocumento=" + estudianteNumeroDocumento +
+                ", IdCarrera=" + IdCarrera +
+                '}';
+    }
 }

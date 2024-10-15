@@ -41,7 +41,7 @@ public class EstudianteController {
         if(e!=null){
             return new ResponseEntity<>(e, HttpStatus.OK);
         }
-        return new ResponseEntity<>(e, HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 
     @GetMapping("/genero/{genero}")

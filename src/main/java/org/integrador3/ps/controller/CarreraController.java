@@ -20,8 +20,6 @@ public class CarreraController {
     @Autowired
     private CarreraService carreraService;
 
-
-
     @GetMapping("/")
     public ResponseEntity<List<Carrera>> obtenerTodasLasCarreras() {
         List<Carrera> carreras = carreraService.obtenerTodasLasCarreras();

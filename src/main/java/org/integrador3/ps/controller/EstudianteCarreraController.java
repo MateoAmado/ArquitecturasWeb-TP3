@@ -22,7 +22,6 @@ public class EstudianteCarreraController {
  private EstudianteCarreraService estudianteCarreraService;
 
 
-    // Obtener todos los jugadores
  @GetMapping("/")
  public ResponseEntity<List<EstudianteCarreraDTO>> obtenerTodasLasCarrerasConEstudiantes() {
     List<EstudianteCarreraDTO> carreras = estudianteCarreraService.obtenerTodasLasCarrerasConEstudiantes();
@@ -32,28 +31,17 @@ public class EstudianteCarreraController {
 
  @PostMapping
  public ResponseEntity<EstudianteCarreraDTO> crearEstudianteCarrera(@RequestBody Estudiante_Carrera estudianteCarrera) {
-  System.out.println(estudianteCarrera.toString());
   EstudianteCarreraDTO nuevoEstudianteCarrera = estudianteCarreraService.save(estudianteCarrera);
-  return ResponseEntity.ok(nuevoEstudianteCarrera);
+  if(nuevoEstudianteCarrera != null) {
+   return ResponseEntity.ok(nuevoEstudianteCarrera);
+  }
+  return new ResponseEntity<>(HttpStatus.NOT_FOUND);
  }
 
  @GetMapping("/informe")
  public ResponseEntity<List<InformeCarreraDTO>> obtenerInforme(){
   List<InformeCarreraDTO> esDTO = estudianteCarreraService.obtenerInformeDTO();
-  //c.idCarrera, c.nombre, e.numeroDocumento, e.nombre, e.apellido, e.ciudadResidencia, e.edad, e.genero, e.numeroLibretaUniversitaria
- System.out.println(esDTO);
   return ResponseEntity.ok(esDTO);
 
  }
-
-/*
- {
-  "estudianteCarreraId": {
-  "estudianteId": 1,
-          "carreraId": 2
- },
-  "fechaInscripcion": "2024-10-04",
-         "graduado": false
- }
-*/
 }

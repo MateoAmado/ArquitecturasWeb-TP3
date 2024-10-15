@@ -18,9 +18,13 @@ public class EstudianteCarreraService {
 
 
     public EstudianteCarreraDTO save(Estudiante_Carrera estudianteCarrera){
-        Estudiante_Carrera ec=this.estudianteCarreraRepository.save(estudianteCarrera);
-        EstudianteCarreraDTO ecDTO=this.estudianteCarreraRepository.getEstudianteCarreraPorId(ec.getId());
-        return ecDTO;
+        if((estudianteCarrera.getEstudiante().getNumeroDocumento().equals(estudianteCarrera.getId().getEstudianteNumeroDocumento())) &&
+                (estudianteCarrera.getCarrera().getIdCarrera().equals(estudianteCarrera.getId().getIdCarrera()))) {
+            Estudiante_Carrera ec = this.estudianteCarreraRepository.save(estudianteCarrera);
+            EstudianteCarreraDTO ecDTO = this.estudianteCarreraRepository.getEstudianteCarreraPorId(ec.getId());
+            return ecDTO;
+        }
+        return null;
     }
 
     public List<EstudianteCarreraDTO> obtenerTodasLasCarrerasConEstudiantes() {
