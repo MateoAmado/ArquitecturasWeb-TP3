@@ -21,7 +21,6 @@ public class EstudianteCarreraService {
         Estudiante_Carrera ec=this.estudianteCarreraRepository.save(estudianteCarrera);
         EstudianteCarreraDTO ecDTO=this.estudianteCarreraRepository.getEstudianteCarreraPorId(ec.getId());
         return ecDTO;
-
     }
 
     public List<EstudianteCarreraDTO> obtenerTodasLasCarrerasConEstudiantes() {

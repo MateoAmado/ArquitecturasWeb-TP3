@@ -19,11 +19,7 @@ import java.util.List;
 public class EstudianteController {
 
     @Autowired
-    private final EstudianteService estudianteService;
-
-    public EstudianteController(EstudianteService estudianteService) {
-        this.estudianteService = estudianteService;
-    }
+    private EstudianteService estudianteService;
 
     @GetMapping("/")
     public ResponseEntity<List<Estudiante>> obtenerTodosLosEstudiantes() {
